@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Cheddar</string>
+    <string name="action_settings">Settings</string>
+    <string name="radio_bank">Bank</string>
+    <string name="radio_mobile_wallet">Mobile Wallet</string>
+    <string name="send_money">Send money to</string>
+    <string-array name="banks_list">
+        <item>Equity</item>
+        <item>Bank Of Baroda</item>
+        <item>Another Bank</item>
+        <item>Another Bank</item>
+        <item>Another Bank</item>
+    </string-array>
+</resources>
