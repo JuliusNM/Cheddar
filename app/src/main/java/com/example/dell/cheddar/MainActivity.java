@@ -27,13 +27,13 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(context, SendMoney.class);
+                Intent intent= new Intent(context, HomeActivity.class);
                 startActivity(intent);
 
             }
         });
 
-        
+
 
     }
 
