@@ -11,10 +11,10 @@ import android.view.ViewGroup;
  * Created by Dell on 6/27/2017.
  */
 
-public class ProfileDetails extends Fragment {
+public class ContactDetails extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.profile_details, container, false);
+        return inflater.inflate(R.layout.contact_details, container, false);
     }
 }
