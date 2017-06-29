@@ -16,6 +16,11 @@ public class HomeActivity extends AppCompatActivity {
     TabLayout tablayout;
     ViewPager viewpager;
 
+    private int[] tabIcons={
+            R.drawable.ic_perm_identity_white_24dp,
+            R.drawable.ic_history_white_24dp
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +57,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    };
+        setTabIcons();
+
+    }
 
     private class CustomAdapter extends FragmentPagerAdapter {
-        private String fragments [] = {"History", "Profile"};
+        private String fragments [] = {"Recipients", "History"};
 
         public CustomAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
         super(supportFragmentManager);
@@ -78,9 +85,12 @@ public class HomeActivity extends AppCompatActivity {
         public int getCount() {
             return fragments.length;
         }
-        @Override
-        public CharSequence getPageTitle(int position){
-            return fragments[position];
-        }
+
+    }
+
+    private void setTabIcons()
+    {
+        tablayout.getTabAt(0).setIcon(tabIcons[0]);
+        tablayout.getTabAt(1).setIcon(tabIcons[1]);
     }
 }
