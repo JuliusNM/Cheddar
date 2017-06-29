@@ -1,21 +1,36 @@
 package com.example.dell.cheddar;
 
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import java.util.ArrayList;
 
-import static android.R.id.list;
-
 public class SendMoney extends AppCompatActivity  {
+
+    private RadioGroup bankwallet;
+    private EditText accountNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money);
+
+        accountNumber = (EditText) findViewById(R.id.account_number);
+
+        bankwallet = (RadioGroup) findViewById(R.id.radioSendTo);
+        bankwallet.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int buttonId) {
+                RadioButton selectedButton = (RadioButton) findViewById(buttonId);
+                accountNumber.setHint((String) selectedButton.getTag());
+            }
+        });
 
         ArrayList<CountryData>countries = new ArrayList<>();
         countries.add(new CountryData("Nigeria", R.drawable.nigeria));

@@ -31,6 +31,7 @@
 
         <RadioButton
             android:id="@+id/radioBank"
+            android:tag="Enter Account Number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_bank"
@@ -40,6 +41,7 @@
 
         <RadioButton
             android:id="@+id/radioMobileWallet"
+            android:tag="Enter Phone Number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio_mobile_wallet"
@@ -89,7 +91,7 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/account_number"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:ems="10"
@@ -109,7 +111,7 @@
         android:layout_height="wrap_content"
         android:text="Send money from:"
         android:textSize="20sp"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/account_number"
         android:layout_alignRight="@+id/textView"
         android:layout_alignEnd="@+id/textView"
         android:layout_marginTop="17dp" />
