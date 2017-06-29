@@ -20,12 +20,13 @@ public class SendMoney extends AppCompatActivity  {
         ArrayList<CountryData>countries = new ArrayList<>();
         countries.add(new CountryData("Nigeria", R.drawable.nigeria));
         countries.add(new CountryData("Ghana", R.drawable.ghana));
+
         Spinner sp = (Spinner)findViewById(R.id.countries_spinner);
         CountrySpinnerAdapter adapter=new CountrySpinnerAdapter(this, 2, countries);
         sp.setAdapter(adapter);
 
         Spinner banksList = (Spinner) findViewById(R.id.banks_spinner);
-        // Create an ArrayAdapter using the string array and a default spinner
+
         ArrayAdapter<CharSequence> bankAdapter = ArrayAdapter.createFromResource(this, R.array.banks_list,
                 android.R.layout.simple_spinner_item);
 
