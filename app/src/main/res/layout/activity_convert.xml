@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/big"
-        android:layout_height="100dp"
+        android:id="@+id/top_layout"
+        android:layout_height="90dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
@@ -22,12 +22,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="4"
-            android:weightSum="5">
+            android:weightSum="5"
+            android:background="@drawable/right_border">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:layout_marginTop="10dp"
                 android:text="You Send"
+                android:textColor="#d8e3f7"
+                android:textStyle="bold"
                 android:textSize="20sp"
                 android:gravity="center"
                 />
@@ -42,6 +46,8 @@
                 android:textColor="#23e14b"
                 android:inputType="numberDecimal"
                 />
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -50,13 +56,254 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:background="#061947"
             android:gravity="right">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ghana"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:layout_marginRight="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GH"
+                android:textColor="#3f6ee0"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"/>
 
 
 
         </LinearLayout>
     </LinearLayout>
+
+    <!--Exchange rate layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exchange_rate"
+        android:orientation="horizontal"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/top_layout"
+        android:weightSum="7">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_fiber_manual_record_white_24dp"
+            android:tint="#d8e3f7"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/ex_rate_value"
+            android:layout_height="wrap_content"
+            android:textColor="#24df48"
+            android:text="0.67"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#8b8c90"
+            android:text="Exchange rate"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_weight="5"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+    <!--Our Charges layout-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/our_charges"
+        android:orientation="horizontal"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/exchange_rate"
+        android:weightSum="7">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_fiber_manual_record_white_24dp"
+            android:tint="#d8e3f7"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/our_charges_value"
+            android:layout_height="wrap_content"
+            android:textColor="#24df48"
+            android:text="10%"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#8b8c90"
+            android:text="Our Charges"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_weight="5"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+
+
+
+
+
+
+    <!--User receives layout-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/lower_layout"
+        android:layout_height="90dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="230dp"
+        android:weightSum="5"
+        android:background="@drawable/rounded">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="4"
+            android:weightSum="5"
+            android:background="@drawable/right_border">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginTop="10dp"
+                android:text="They Receive"
+                android:textColor="#d8e3f7"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="100.00"
+                android:textColor="#23e14b"
+                android:inputType="numberDecimal"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="140dp"
+            android:id="@+id/right_section_bottom"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ghana"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:layout_marginRight="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GH"
+                android:textColor="#3f6ee0"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"/>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Total-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/total_layout"
+        android:orientation="horizontal"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/lower_layout"
+        android:weightSum="7">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Total"
+            android:textSize="20sp"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/total"
+            android:layout_height="wrap_content"
+            android:textColor="#24df48"
+            android:text="24512.23"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#3f6ee0"
+            android:text="NG"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_weight="5"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@id/lower_layout">
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Money"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/blue_rounded"
+            />
+    </LinearLayout>
+
+
 
 
 
