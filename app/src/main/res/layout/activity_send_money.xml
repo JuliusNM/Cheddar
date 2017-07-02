@@ -19,6 +19,8 @@
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
 
+
+
     <RadioGroup
         android:id="@+id/radioSendTo"
         android:layout_width="wrap_content"
@@ -27,70 +29,103 @@
         android:layout_alignLeft="@+id/send_from"
         android:layout_alignStart="@+id/send_from"
         android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         android:layout_marginLeft="10dp">
 
-        <RadioButton
-            android:id="@+id/radioBank"
-            android:tag="Enter Account Number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_bank"
-            android:textSize="18sp"
-            android:checked="true"
-            />
 
-        <RadioButton
-            android:id="@+id/radioMobileWallet"
-            android:tag="Enter Phone Number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_mobile_wallet"
-            android:textSize="18sp"/>
+            <RadioButton
+                android:id="@+id/radioBank"
+                android:tag="Enter Account Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_bank"
+                android:textSize="18sp"
+                android:checked="true"
+                android:layout_weight="1"
+
+                />
+            <RadioButton
+                android:id="@+id/radioMobileWallet"
+                android:tag="Enter Phone Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_mobile_wallet"
+                android:textSize="18sp"
+                android:layout_marginLeft="50dp"
+                android:layout_weight="1"
+
+                />
+
 
     </RadioGroup>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/select_country_layout"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/radioSendTo">
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:text="Receiving Country:"
+            android:gravity="center_horizontal"
             android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/radioSendTo"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="10dp"
             android:layout_alignLeft="@+id/countries_spinner"
             android:layout_alignStart="@+id/countries_spinner" />
-
         <Spinner
             android:id="@+id/countries_spinner"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded"
-            android:layout_below="@+id/textView"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
         </Spinner>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:text="Receiving Bank:"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/countries_spinner"
-        android:layout_alignLeft="@+id/banks_spinner"
-        android:layout_alignStart="@+id/banks_spinner" />
+    </LinearLayout>
 
-    <Spinner
-        android:id="@+id/banks_spinner"
+
+    <LinearLayout
         android:layout_width="match_parent"
+        android:id="@+id/select_bank_layout"
         android:layout_height="40dp"
         android:background="@drawable/rounded"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
-    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/select_country_layout">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Receiving Bank:"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
+            android:layout_alignLeft="@+id/countries_spinner"
+            android:layout_alignStart="@+id/countries_spinner" />
+        <Spinner
+            android:id="@+id/banks_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+        </Spinner>
+
+    </LinearLayout>
+
+  <EditText
         android:id="@+id/account_number"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -99,7 +134,7 @@
         android:inputType="number"
         android:background="@drawable/rounded"
         android:paddingLeft="10dp"
-        android:layout_below="@+id/banks_spinner"
+        android:layout_below="@+id/select_bank_layout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="12dp" />
@@ -120,6 +155,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/radioGroup"
         android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         android:layout_below="@+id/send_from"
         android:layout_alignLeft="@+id/radioSendTo"
         android:layout_alignStart="@+id/radioSendTo">
@@ -127,11 +163,8 @@
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/next"
-            android:layout_alignLeft="@+id/radioGroup"
-            android:layout_alignStart="@+id/radioGroup"
             android:checked="true"
             android:text="CentralBank"
             android:textSize="18sp" />
@@ -140,10 +173,8 @@
             android:id="@+id/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/radioButton2"
-            android:layout_alignLeft="@+id/radioButton2"
-            android:layout_alignStart="@+id/radioButton2"
             android:text="Bank of Baroda"
+            android:layout_marginLeft="50dp"
             android:textSize="18sp" />
     </RadioGroup>
 
