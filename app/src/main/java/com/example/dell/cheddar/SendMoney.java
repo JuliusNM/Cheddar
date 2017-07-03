@@ -1,9 +1,12 @@
 package com.example.dell.cheddar;
 
+import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -15,6 +18,7 @@ public class SendMoney extends AppCompatActivity  {
 
     private RadioGroup bankwallet;
     private EditText accountNumber;
+    private Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,15 @@ public class SendMoney extends AppCompatActivity  {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int buttonId) {
                 RadioButton selectedButton = (RadioButton) findViewById(buttonId);
                 accountNumber.setHint((String) selectedButton.getTag());
+            }
+        });
+
+        next = (Button) findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent convert = new Intent(getApplicationContext(), Convert.class);
+                startActivity(convert);
             }
         });
 
