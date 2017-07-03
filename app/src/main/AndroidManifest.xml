@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddRecipient" />
-        <activity android:name=".Convert"></activity>
+        <activity android:name=".Convert" />
+        <activity android:name=".Register"></activity>
     </application>
 
 </manifest>
