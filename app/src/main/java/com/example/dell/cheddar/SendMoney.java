@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class SendMoney extends AppCompatActivity  {
 
-    private RadioGroup bankwallet;
+//    private RadioGroup bankwallet;
     private EditText accountNumber;
     private Button next;
 
@@ -27,14 +27,14 @@ public class SendMoney extends AppCompatActivity  {
 
         accountNumber = (EditText) findViewById(R.id.account_number);
 
-        bankwallet = (RadioGroup) findViewById(R.id.radioSendTo);
-        bankwallet.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int buttonId) {
-                RadioButton selectedButton = (RadioButton) findViewById(buttonId);
-                accountNumber.setHint((String) selectedButton.getTag());
-            }
-        });
+//        bankwallet = (RadioGroup) findViewById(R.id.radioSendTo);
+//        bankwallet.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int buttonId) {
+//                RadioButton selectedButton = (RadioButton) findViewById(buttonId);
+//                accountNumber.setHint((String) selectedButton.getTag());
+//            }
+//        });
 
         next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {

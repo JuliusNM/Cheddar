@@ -8,56 +8,56 @@
     android:layout_marginRight="10dp"
     tools:context="com.example.dell.cheddar.SendMoney">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send_money"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:id="@+id/textView4"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/send_money"-->
+        <!--android:textSize="20sp"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:id="@+id/textView4"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignLeft="@+id/textView"-->
+        <!--android:layout_alignStart="@+id/textView" />-->
 
 
 
-    <RadioGroup
-        android:id="@+id/radioSendTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_alignLeft="@+id/send_from"
-        android:layout_alignStart="@+id/send_from"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp">
+    <!--<RadioGroup-->
+        <!--android:id="@+id/radioSendTo"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/textView4"-->
+        <!--android:layout_alignLeft="@+id/send_from"-->
+        <!--android:layout_alignStart="@+id/send_from"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginLeft="10dp">-->
 
 
-            <RadioButton
-                android:id="@+id/radioBank"
-                android:tag="Enter Account Number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/radio_bank"
-                android:textSize="18sp"
-                android:checked="true"
-                android:layout_weight="1"
+            <!--<RadioButton-->
+                <!--android:id="@+id/radioBank"-->
+                <!--android:tag="Enter Account Number"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/radio_bank"-->
+                <!--android:textSize="18sp"-->
+                <!--android:checked="true"-->
+                <!--android:layout_weight="1"-->
 
-                />
-            <RadioButton
-                android:id="@+id/radioMobileWallet"
-                android:tag="Enter Phone Number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/radio_mobile_wallet"
-                android:textSize="18sp"
-                android:layout_marginLeft="50dp"
-                android:layout_weight="1"
+                <!--/>-->
+            <!--<RadioButton-->
+                <!--android:id="@+id/radioMobileWallet"-->
+                <!--android:tag="Enter Phone Number"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/radio_mobile_wallet"-->
+                <!--android:textSize="18sp"-->
+                <!--android:layout_marginLeft="50dp"-->
+                <!--android:layout_weight="1"-->
 
-                />
+                <!--/>-->
 
 
-    </RadioGroup>
+    <!--</RadioGroup>-->
 
 
     <LinearLayout
@@ -65,8 +65,7 @@
         android:id="@+id/select_country_layout"
         android:layout_height="40dp"
         android:background="@drawable/rounded"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/radioSendTo">
+        android:layout_marginTop="150dp">
 
         <TextView
             android:id="@+id/textView"

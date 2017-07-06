@@ -43,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Account Number"
+            android:textSize="16dp"
             android:layout_gravity="center_vertical|right"
             android:layout_weight="3"
             android:inputType="number"/>
@@ -51,7 +52,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:weightSum="4"
+        android:weightSum="5"
         android:background="@drawable/rounded"
         android:id="@+id/layout_name"
         android:layout_marginLeft="10dp"
@@ -64,44 +65,29 @@
             android:layout_height="20dp"
             android:src="@drawable/ic_account_circle_white_18dp"
             android:tint="@color/colorPrimary"
-            android:layout_gravity="center_vertical|left"
-            android:layout_weight="1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Account Name"
-            android:textSize="15dp"
-            android:layout_gravity="center_vertical|right"
-            android:layout_weight="3"
-            android:inputType="number"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:weightSum="4"
-        android:background="@drawable/rounded"
-        android:id="@+id/layout_phone_number"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@+id/layout_name"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp">
-        <ImageView
-
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_phone_white_18dp"
-            android:tint="@color/colorPrimary"
+            android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical|left"
             android:layout_weight="1"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Phone Number"
+            android:background="@drawable/right_border"
+            android:hint="First Name"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical|left"
+            android:layout_weight="2"
+            android:layout_marginLeft="20dp"
+            android:inputType="text"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:textSize="16dp"
             android:layout_gravity="center_vertical|right"
-            android:layout_weight="3"
-            android:inputType="number"/>
+            android:layout_weight="2"
+            android:inputType="text"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -109,7 +95,7 @@
         android:background="@drawable/rounded"
         android:id="@+id/layout_bank_name"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/layout_phone_number"
+        android:layout_below="@+id/layout_name"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp">
         <ImageView
@@ -119,22 +105,51 @@
             android:src="@drawable/ic_account_balance_white_18dp"
             android:tint="@color/colorPrimary"
             android:layout_gravity="center_vertical|left"
-            android:layout_weight="1"/>
+            android:layout_weight="0.82"/>
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Bank Name"
+            android:textSize="16dp"
             android:layout_gravity="center_vertical|right"
             android:layout_weight="3"
             android:inputType="number"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="4"
+        android:background="@drawable/rounded"
+        android:id="@+id/layout_country"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/layout_bank_name"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_language_white_24dp"
+            android:tint="@color/colorPrimary"
+            android:layout_gravity="center_vertical|left"
+            android:layout_weight="0.70"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Country"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical|right"
+            android:layout_weight="3"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/layout_bank_name">
+        android:layout_below="@+id/layout_country">
 
         <Button
             android:layout_width="wrap_content"
