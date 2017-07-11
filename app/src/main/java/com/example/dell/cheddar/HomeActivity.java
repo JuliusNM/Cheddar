@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch(position){
                 case 0:
-                   return new ContactDetails();
+                   return new Recipients();
                 case 1:
                     return new TransactionHistory();
                 default:
