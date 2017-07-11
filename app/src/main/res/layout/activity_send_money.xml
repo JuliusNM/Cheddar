@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    tools:context="com.example.dell.cheddar.SendMoney">
+    tools:context="com.example.dell.cheddar.SendMoneyActivity">
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->

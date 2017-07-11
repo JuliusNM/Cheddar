@@ -1,4 +1,4 @@
-package com.example.dell.cheddar;
+package com.example.dell.cheddar.adapter;
 
 import android.widget.ArrayAdapter;
 import android.app.Activity;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.dell.cheddar.model.CountryData;
+import com.example.dell.cheddar.R;
+
 import java.util.ArrayList;
 
 /**

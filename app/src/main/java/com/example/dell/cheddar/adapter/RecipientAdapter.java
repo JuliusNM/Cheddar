@@ -1,6 +1,5 @@
-package com.example.dell.cheddar;
+package com.example.dell.cheddar.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;

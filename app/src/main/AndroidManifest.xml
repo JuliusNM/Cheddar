@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SendMoney" />
+        <activity android:name=".SendMoneyActivity" />
         <activity
             android:name=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -19,9 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddRecipient" />
-        <activity android:name=".Convert" />
-        <activity android:name=".Register"></activity>
+        <activity android:name=".AddRecipientActivity" />
+        <activity android:name=".ConvertActivity" />
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

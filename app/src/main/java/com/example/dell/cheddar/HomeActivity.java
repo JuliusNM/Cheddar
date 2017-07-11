@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), SendMoney.class);
+                Intent intent= new Intent(getApplicationContext(), SendMoneyActivity.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {
-        private String fragments [] = {"Recipients", "History"};
+        private String fragments [] = {"RecipientFragment", "History"};
 
         public CustomAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
         super(supportFragmentManager);
@@ -76,9 +76,9 @@ public class HomeActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch(position){
                 case 0:
-                   return new Recipients();
+                   return new RecipientFragment();
                 case 1:
-                    return new TransactionHistory();
+                    return new TransactionHistoryFragment();
                 default:
                     return null;
 

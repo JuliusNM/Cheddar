@@ -1,20 +1,20 @@
 package com.example.dell.cheddar;
 
 import android.content.Intent;
-import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import com.example.dell.cheddar.adapter.CountrySpinnerAdapter;
+import com.example.dell.cheddar.model.CountryData;
 
 import java.util.ArrayList;
 
-public class SendMoney extends AppCompatActivity  {
+public class SendMoneyActivity extends AppCompatActivity  {
 
 //    private RadioGroup bankwallet;
     private EditText accountNumber;
@@ -40,7 +40,7 @@ public class SendMoney extends AppCompatActivity  {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent convert = new Intent(getApplicationContext(), Convert.class);
+                Intent convert = new Intent(getApplicationContext(), ConvertActivity.class);
                 startActivity(convert);
             }
         });

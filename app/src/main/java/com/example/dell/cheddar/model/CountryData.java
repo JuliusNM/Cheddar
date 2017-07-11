@@ -1,4 +1,4 @@
-package com.example.dell.cheddar;
+package com.example.dell.cheddar.model;
 
 /**
  * Created by Dell on 6/26/2017.

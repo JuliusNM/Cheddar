@@ -15,7 +15,7 @@ import android.widget.ImageView;
  * Created by Dell on 6/27/2017.
  */
 
-public class Recipients extends Fragment {
+public class RecipientFragment extends Fragment {
     ImageView add;
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
@@ -29,7 +29,7 @@ public class Recipients extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent addrecipient = new Intent(getActivity(), AddRecipient.class);
+                Intent addrecipient = new Intent(getActivity(), AddRecipientActivity.class);
                 startActivity(addrecipient);
             }
         });

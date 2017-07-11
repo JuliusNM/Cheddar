@@ -11,7 +11,7 @@ import android.view.ViewGroup;
  * Created by Dell on 6/27/2017.
  */
 
-public class TransactionHistory extends Fragment {
+public class TransactionHistoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
