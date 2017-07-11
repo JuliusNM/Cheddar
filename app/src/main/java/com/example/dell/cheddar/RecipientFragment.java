@@ -11,6 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.dell.cheddar.adapter.RecipientAdapter;
+import com.example.dell.cheddar.model.Recipient;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by Dell on 6/27/2017.
  */
@@ -38,6 +45,16 @@ public class RecipientFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
+
+        ArrayList<Recipient> recipients = new ArrayList<>(Arrays.asList(
+                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius),
+                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius),
+                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius)
+
+        ));
+
+        RecipientAdapter adapter = new RecipientAdapter(recipients);
+        recyclerView.setAdapter(adapter);
 
         return layout;
 

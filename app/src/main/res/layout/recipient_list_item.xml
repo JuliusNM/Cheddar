@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal">
 
@@ -19,7 +19,7 @@
             android:id="@+id/recipient_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Jerry Yamg (not yahoo))"/>
+            tools:text="Jerry Yang (not yahoo))"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,17 +44,17 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <android.support.v7.widget.MenuPopupWindow.MenuDropDownListView
-            android:id="@+id/recipient_options"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/ic_more_vert_white_18dp"
-            android:backgroundTint="@color/colorPrimary">
+        <!--<android.support.v7.widget.MenuPopupWindow.MenuDropDownListView-->
+            <!--android:id="@+id/recipient_options"-->
+            <!--android:layout_width="18dp"-->
+            <!--android:layout_height="18dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:background="@drawable/ic_more_vert_white_18dp"-->
+            <!--android:backgroundTint="@color/colorPrimary">-->
 
-        </android.support.v7.widget.MenuPopupWindow.MenuDropDownListView>
+        <!--</android.support.v7.widget.MenuPopupWindow.MenuDropDownListView>-->
 
         <ImageButton
             android:id="@+id/recipient_send"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimaryDark"
             android:background="@android:drawable/ic_media_next"
-            android:layout_centerVertical="true"/>
+            />
 
     </RelativeLayout>
 
