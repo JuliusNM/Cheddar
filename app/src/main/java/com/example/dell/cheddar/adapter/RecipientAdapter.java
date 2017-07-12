@@ -1,14 +1,14 @@
 package com.example.dell.cheddar.adapter;
 
-import android.content.Context;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.MenuPopupWindow;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dell.cheddar.R;
 import com.example.dell.cheddar.model.Recipient;
@@ -16,29 +16,46 @@ import com.example.dell.cheddar.util.CountryHelper;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
+import static java.security.AccessController.getContext;
+
 /**
  * Created by Dell on 7/10/2017.
  */
 
 public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.RecipientHolder> {
 
-    public static class RecipientHolder extends RecyclerView.ViewHolder {
+    public static class RecipientHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        ImageView profile;
+        CircleImageView profile;
         TextView name;
         MenuPopupWindow.MenuDropDownListView menuDropDown;
-        ImageView countryflag;
+        ImageView countryFlag;
         TextView bank;
+        public ImageView send;
+
 
         public RecipientHolder(View itemView) {
             super(itemView);
 
-            profile = (ImageView) itemView.findViewById(R.id.recipient_picture);
+            profile = (CircleImageView) itemView.findViewById(R.id.recipient_picture);
             name = (TextView) itemView.findViewById(R.id.recipient_name);
 //            menuDropDown = (MenuPopupWindow.MenuDropDownListView)itemView.findViewById(R.id.recipient_options);
-            countryflag = (ImageView) itemView.findViewById(R.id.recipient_country);
+            countryFlag = (ImageView) itemView.findViewById(R.id.recipient_country);
             bank = (TextView) itemView.findViewById(R.id.recipient_bank);
+            send = (ImageView) itemView.findViewById(R.id.recipient_send);
+            send.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == send.getId()){
+                Toast.makeText(v.getContext(), "ITEM PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(v.getContext(), "ROW PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -61,10 +78,10 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
     public  void onBindViewHolder(RecipientHolder holder, int position) {
         Recipient recipient = recipients.get(position);
 
-        holder.profile.setBackgroundResource(recipient.getProfile());
+        holder.profile.setImageDrawable(holder.bank.getContext().getResources().getDrawable(recipient.getProfile()));
         holder.name.setText(recipient.getFirstName());
 //        holder.menuDropDown
-        holder.countryflag.setBackgroundResource(CountryHelper.getCountryImageFromStr(recipient.getCountry()));
+        holder.countryFlag.setBackgroundResource(CountryHelper.getCountryImageFromStr(recipient.getCountry()));
         holder.bank.setText(recipient.getBank());
     }
 

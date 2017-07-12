@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".AddRecipientActivity" />
         <activity android:name=".ConvertActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ActivitySendFromRecipient"></activity>
     </application>
 
 </manifest>

@@ -15,4 +15,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_add_recipient">AddRecipient</string>
+    <string name="send_money_from">Send Money From:</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="you_are_about_to_send_money_to">You are about to send money to:</string>
 </resources>
