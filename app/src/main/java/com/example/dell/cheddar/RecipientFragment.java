@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import com.example.dell.cheddar.adapter.RecipientAdapter;
 import com.example.dell.cheddar.model.Recipient;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -36,8 +35,8 @@ public class RecipientFragment extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent addrecipient = new Intent(getActivity(), AddRecipientActivity.class);
-                startActivity(addrecipient);
+                Intent addRecipient = new Intent(getActivity(), AddRecipientActivity.class);
+                startActivity(addRecipient);
             }
         });
 
@@ -48,7 +47,7 @@ public class RecipientFragment extends Fragment {
 
         ArrayList<Recipient> recipients = new ArrayList<>(Arrays.asList(
                 new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius),
-                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius),
+                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Nigeria", "134567890", R.drawable.julius),
                 new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius)
 
         ));

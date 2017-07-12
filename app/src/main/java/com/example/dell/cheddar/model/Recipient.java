@@ -1,7 +1,5 @@
 package com.example.dell.cheddar.model;
 
-import android.media.Image;
-
 /**
  * Created by Dell on 7/10/2017.
  */
@@ -11,15 +9,15 @@ public class Recipient {
     private String lastName;
     private String bank;
     private String country;
-    private String acountNumber;
+    private String accountNumber;
     private Integer profile;
 
-    public Recipient(String firstName, String lastName, String bank, String country, String acountNumber, Integer profile) {
+    public Recipient(String firstName, String lastName, String bank, String country, String accountNumber, Integer profile) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bank = bank;
         this.country = country;
-        this.acountNumber = acountNumber;
+        this.accountNumber = accountNumber;
         this.profile = profile;
     }
 
@@ -67,11 +65,11 @@ public class Recipient {
         this.country = country;
     }
 
-    public String getAcountNumber() {
-        return acountNumber;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setAcountNumber(String acountNumber) {
-        this.acountNumber = acountNumber;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 }

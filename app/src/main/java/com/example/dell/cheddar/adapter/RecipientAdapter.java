@@ -1,5 +1,7 @@
 package com.example.dell.cheddar.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.MenuPopupWindow;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dell.cheddar.ActivitySendFromRecipient;
 import com.example.dell.cheddar.R;
 import com.example.dell.cheddar.model.Recipient;
 import com.example.dell.cheddar.util.CountryHelper;
@@ -50,12 +53,10 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
         }
 
         @Override
-        public void onClick(View v) {
-            if (v.getId() == send.getId()){
-                Toast.makeText(v.getContext(), "ITEM PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(v.getContext(), "ROW PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
-            }
+        public void onClick(View view) {
+            Context context = view.getContext();
+            Intent intent = new Intent(context, ActivitySendFromRecipient.class);
+            context.startActivity(intent);
         }
     }
 
@@ -79,7 +80,7 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
         Recipient recipient = recipients.get(position);
 
         holder.profile.setImageDrawable(holder.bank.getContext().getResources().getDrawable(recipient.getProfile()));
-        holder.name.setText(recipient.getFirstName());
+        holder.name.setText(recipient.getFirstName()+" "+recipient.getLastName());
 //        holder.menuDropDown
         holder.countryFlag.setBackgroundResource(CountryHelper.getCountryImageFromStr(recipient.getCountry()));
         holder.bank.setText(recipient.getBank());

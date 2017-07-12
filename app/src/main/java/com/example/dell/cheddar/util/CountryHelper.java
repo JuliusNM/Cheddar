@@ -15,6 +15,9 @@ public class CountryHelper {
             case "Ghana":
                 resource = R.drawable.ghana;
                 break;
+            case "Nigeria":
+                resource = R.drawable.nigeria;
+                break;
         }
 
         return resource;
