@@ -79,7 +79,7 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
     public  void onBindViewHolder(RecipientHolder holder, int position) {
         Recipient recipient = recipients.get(position);
 
-        holder.profile.setImageDrawable(holder.bank.getContext().getResources().getDrawable(recipient.getProfile()));
+//        holder.profile.setImageDrawable(holder.bank.getContext().getResources().getDrawable(recipient.getProfile()));
         holder.name.setText(recipient.getFirstName()+" "+recipient.getLastName());
 //        holder.menuDropDown
         holder.countryFlag.setBackgroundResource(CountryHelper.getCountryImageFromStr(recipient.getCountry()));

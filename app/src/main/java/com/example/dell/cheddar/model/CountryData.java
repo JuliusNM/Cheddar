@@ -20,4 +20,9 @@ public class CountryData {
     public Integer getImageId(){
         return imageId;
     }
+
+    @Override
+    public String toString() {
+        return text;
+    }
 }

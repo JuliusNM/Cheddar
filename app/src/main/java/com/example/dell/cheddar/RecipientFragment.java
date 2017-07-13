@@ -6,16 +6,23 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.dell.cheddar.adapter.RecipientAdapter;
+import com.example.dell.cheddar.model.ApiClient;
+import com.example.dell.cheddar.model.ApiInterface;
 import com.example.dell.cheddar.model.Recipient;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Dell on 6/27/2017.
@@ -25,6 +32,9 @@ public class RecipientFragment extends Fragment {
     ImageView add;
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
+    private ApiInterface apiInterface;
+    private ArrayList<Recipient> recipients;
+    private RecipientAdapter adapter;
 
     @Nullable
     @Override
@@ -45,15 +55,34 @@ public class RecipientFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
-        ArrayList<Recipient> recipients = new ArrayList<>(Arrays.asList(
-                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius),
-                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Nigeria", "134567890", R.drawable.julius),
-                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius)
+        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        ));
+        Call<ArrayList<Recipient>> call = apiInterface.getRecipients();
 
-        RecipientAdapter adapter = new RecipientAdapter(recipients);
-        recyclerView.setAdapter(adapter);
+        call.enqueue(new Callback<ArrayList<Recipient>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Recipient>> call, Response<ArrayList<Recipient>> response) {
+                recipients = response.body();
+                adapter = new RecipientAdapter(recipients);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Recipient>> call, Throwable t) {
+                Log.d("we failed", "see");
+            }
+        });
+
+
+//        ArrayList<Recipient> recipients = new ArrayList<>(Arrays.asList(
+//                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius),
+//                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Nigeria", "134567890", R.drawable.julius),
+//                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius)
+//
+//        ));
+
+
 
         return layout;
 

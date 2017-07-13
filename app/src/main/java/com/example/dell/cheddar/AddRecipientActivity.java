@@ -2,20 +2,96 @@ package com.example.dell.cheddar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.dell.cheddar.adapter.CountrySpinnerAdapter;
+import com.example.dell.cheddar.model.ApiClient;
+import com.example.dell.cheddar.model.ApiInterface;
 import com.example.dell.cheddar.model.CountryData;
+import com.example.dell.cheddar.model.Recipient;
+import com.example.dell.cheddar.model.ResponseData;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class AddRecipientActivity extends AppCompatActivity {
+    EditText accountNumber;
+    EditText firstName;
+    EditText lastName;
+    Spinner bank;
+    Spinner country;
+    Button btnsaveRecipient;
+    Button btncancel;
+    private ApiInterface apiInterface;
+    private ResponseData responseData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipient);
+
+        accountNumber = (EditText)findViewById(R.id.add_recipient_account_number);
+        firstName = (EditText)findViewById(R.id.add_recipient_first_name);
+        lastName = (EditText)findViewById(R.id.add_recipient_last_name);
+        bank = (Spinner)findViewById(R.id.bank_spinner);
+        country = (Spinner)findViewById(R.id.country_spinner);
+
+
+        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+
+
+
+        btnsaveRecipient = (Button)findViewById(R.id.btn_save_recipient);
+        btnsaveRecipient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Recipient recipient = new Recipient(
+
+                        firstName.getText().toString(),
+                        lastName.getText().toString(),
+                        bank.getSelectedItem().toString(),
+                        country.getSelectedItem().toString(),
+                        accountNumber.getText().toString(),
+                        null
+                );
+
+                Call<ResponseData> call = apiInterface.postRecipient(recipient);
+                call.enqueue(new Callback<ResponseData>() {
+                    @Override
+                    public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+                        responseData = response.body();
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseData> call, Throwable t) {
+
+                        Log.d("We failed","");
+
+                    }
+                });
+
+
+            }
+        });
+
+        btncancel = (Button)findViewById(R.id.btn_cancel);
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
         ArrayList<CountryData> countries = new ArrayList<>();
         countries.add(new CountryData("Nigeria", R.drawable.nigeria));
@@ -33,4 +109,7 @@ public class AddRecipientActivity extends AppCompatActivity {
         bankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         banksList.setAdapter(bankAdapter);
     }
+
+
+
 }

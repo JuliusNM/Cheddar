@@ -1,14 +1,21 @@
 package com.example.dell.cheddar.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Dell on 7/10/2017.
  */
 
 public class Recipient {
+    @SerializedName("RecipientFirstName")
     private String firstName;
+    @SerializedName("RecipientLastName")
     private String lastName;
+    @SerializedName("RecipientBank")
     private String bank;
+    @SerializedName("Country")
     private String country;
+    @SerializedName("RecipientAccountNumber")
     private String accountNumber;
     private Integer profile;
 
