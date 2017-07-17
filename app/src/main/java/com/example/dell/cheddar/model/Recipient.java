@@ -2,11 +2,13 @@ package com.example.dell.cheddar.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Dell on 7/10/2017.
  */
 
-public class Recipient {
+public class Recipient implements Serializable {
     @SerializedName("RecipientFirstName")
     private String firstName;
     @SerializedName("RecipientLastName")

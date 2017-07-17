@@ -1,5 +1,6 @@
 package com.example.dell.cheddar;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -55,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), SendMoneyActivity.class);
+                Intent intent= new Intent(getApplicationContext(), ActivityProfile.class);
                 startActivity(intent);
             }
         });

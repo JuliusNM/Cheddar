@@ -29,32 +29,36 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Julius  Ngigi"
+            android:text="Julius  Ngigi"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="88dp"
+            android:layout_marginLeft="89dp"
             android:textStyle="bold"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bank Name:"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:textStyle="bold"/>
+            android:layout_marginTop="20dp"
+            android:text="Bank Name:"
+            android:textStyle="bold" />
+
         <TextView
-            android:id="@+id/bank"
+            android:id="@+id/bank_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Jamii Bora"
+            android:layout_marginLeft="56dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="55dp"
-            android:textStyle="bold"/>
+            android:text="Jamii Bora"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -66,12 +70,12 @@
             android:layout_marginLeft="20dp"
             android:textStyle="bold"/>
         <TextView
-            android:id="@+id/account"
+            android:id="@+id/bank_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="24562555545655"
+            android:text="24562555545655"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="26dp"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -89,7 +93,7 @@
             android:id="@+id/country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Nigeria"
+            android:text="Nigeria"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="80dp"
             android:textStyle="bold"/>
@@ -98,27 +102,26 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select account to deduct money from:"
-        android:gravity="center"
+        android:text="Select bank to deduct money from:"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Access Bank"/>
+            android:text="Access Bank"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            tools:text="Access Bank"/>
+            android:text="Bank Of Baroda"/>
     </RadioGroup>
     <LinearLayout
         android:layout_width="match_parent"

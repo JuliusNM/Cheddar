@@ -1,8 +1,5 @@
 package com.example.dell.cheddar.adapter;
 
-import android.content.Context;
-import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.MenuPopupWindow;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.dell.cheddar.ActivitySendFromRecipient;
+import com.example.dell.cheddar.util.CustomClickListener;
 import com.example.dell.cheddar.R;
 import com.example.dell.cheddar.model.Recipient;
 import com.example.dell.cheddar.util.CountryHelper;
@@ -21,15 +17,13 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static java.security.AccessController.getContext;
-
 /**
  * Created by Dell on 7/10/2017.
  */
 
 public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.RecipientHolder> {
 
-    public static class RecipientHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class RecipientHolder extends RecyclerView.ViewHolder {
 
         CircleImageView profile;
         TextView name;
@@ -48,15 +42,7 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
             countryFlag = (ImageView) itemView.findViewById(R.id.recipient_country);
             bank = (TextView) itemView.findViewById(R.id.recipient_bank);
             send = (ImageView) itemView.findViewById(R.id.recipient_send);
-            send.setOnClickListener(this);
 
-        }
-
-        @Override
-        public void onClick(View view) {
-            Context context = view.getContext();
-            Intent intent = new Intent(context, ActivitySendFromRecipient.class);
-            context.startActivity(intent);
         }
     }
 
@@ -84,6 +70,7 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
 //        holder.menuDropDown
         holder.countryFlag.setBackgroundResource(CountryHelper.getCountryImageFromStr(recipient.getCountry()));
         holder.bank.setText(recipient.getBank());
+        holder.send.setOnClickListener(new CustomClickListener(recipient));
     }
 
     @Override

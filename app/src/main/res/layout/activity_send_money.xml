@@ -35,7 +35,7 @@
 
             <!--<RadioButton-->
                 <!--android:id="@+id/radioBank"-->
-                <!--android:tag="Enter Account Number"-->
+                <!--android:tag="Enter Bank Number"-->
                 <!--android:layout_width="wrap_content"-->
                 <!--android:layout_height="wrap_content"-->
                 <!--android:text="@string/radio_bank"-->

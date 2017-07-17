@@ -1,5 +1,7 @@
 package com.example.dell.cheddar.model;
 
+import android.accounts.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +21,12 @@ public interface ApiInterface {
 
     @POST("recipients")
     Call<ResponseData> postRecipient(@Body Recipient body);
+
+    @GET("cards")
+    Call<ArrayList<Card>> getCards();
+
+    @GET("accounts")
+    Call<ArrayList<Bank>> getBankAccounts();
 
 
 }
