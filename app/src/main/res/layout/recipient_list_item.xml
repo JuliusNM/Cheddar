@@ -2,16 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginBottom="10dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:weightSum="7">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <TextView
         android:id="@+id/recipient_picture"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        tools:text="JN"
+        android:textColor="#FAFAFA"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/circle"
         android:layout_marginTop="10dp"
-        android:layout_weight="2"
         />
 
     <LinearLayout
@@ -25,12 +30,15 @@
             android:id="@+id/recipient_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
             tools:text="John Muchiri" />
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:weightSum="4"
             android:layout_weight="0.08">
 
@@ -38,6 +46,7 @@
                 android:id="@+id/recipient_country"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
                 android:layout_gravity="bottom"
                 android:background="@color/cardview_dark_background"/>
             <TextView
@@ -48,20 +57,13 @@
                 tools:text="Access Bank"
                 android:layout_gravity="bottom" />
 
+
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="18dp"
+            android:background="#E0E0E0"/>
     </LinearLayout>
-
-
-
-        <ImageView
-            android:id="@+id/recipient_send"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/blue_rounded" />
-
-
-
 
 </LinearLayout>

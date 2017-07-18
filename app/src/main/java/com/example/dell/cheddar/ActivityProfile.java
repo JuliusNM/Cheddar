@@ -1,10 +1,13 @@
 package com.example.dell.cheddar;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 
 import com.example.dell.cheddar.adapter.AccountAdapter;
@@ -52,7 +55,7 @@ public class ActivityProfile extends AppCompatActivity {
                 ArrayList<Card> cards = response.body();
 
                 ArrayList<AccountInterface> accounts = new ArrayList<AccountInterface>();
-                accounts.add(new SectionTitle("Bank Accounts"));
+                accounts.add(new SectionTitle("Card Accounts"));
                 accounts.addAll(cards);
 
                 accountAdapter.addItems(accounts);
@@ -73,7 +76,7 @@ public class ActivityProfile extends AppCompatActivity {
                 ArrayList<Bank> banks = response.body();
 
                 ArrayList<AccountInterface> accounts = new ArrayList<AccountInterface>();
-                accounts.add(new SectionTitle("Card Accounts"));
+                accounts.add(new SectionTitle("Bank Accounts"));
                 accounts.addAll(banks);
                 accountAdapter.addItems(accounts);
 
@@ -85,5 +88,24 @@ public class ActivityProfile extends AppCompatActivity {
             }
         });
     }
+    // Options Menu
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_settings:
+                if (item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+                Intent settings = new Intent(this, ActivityProfile.class);
+                startActivity(settings);
+
+        }
+        return true;
+    }
+
 
 }

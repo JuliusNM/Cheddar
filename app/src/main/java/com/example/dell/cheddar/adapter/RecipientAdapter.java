@@ -25,23 +25,20 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
 
     public static class RecipientHolder extends RecyclerView.ViewHolder {
 
-        CircleImageView profile;
+        TextView recipient_picture;
         TextView name;
-        MenuPopupWindow.MenuDropDownListView menuDropDown;
         ImageView countryFlag;
         TextView bank;
-        public ImageView send;
+
 
 
         public RecipientHolder(View itemView) {
             super(itemView);
 
-            profile = (CircleImageView) itemView.findViewById(R.id.recipient_picture);
+            recipient_picture = (TextView) itemView.findViewById(R.id.recipient_picture);
             name = (TextView) itemView.findViewById(R.id.recipient_name);
-//            menuDropDown = (MenuPopupWindow.MenuDropDownListView)itemView.findViewById(R.id.recipient_options);
             countryFlag = (ImageView) itemView.findViewById(R.id.recipient_country);
             bank = (TextView) itemView.findViewById(R.id.recipient_bank);
-            send = (ImageView) itemView.findViewById(R.id.recipient_send);
 
         }
     }
@@ -65,12 +62,13 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
     public  void onBindViewHolder(RecipientHolder holder, int position) {
         Recipient recipient = recipients.get(position);
 
-//        holder.profile.setImageDrawable(holder.bank.getContext().getResources().getDrawable(recipient.getProfile()));
+        holder.recipient_picture.setText(recipient.getFirstName().substring(0, 1)+" "+recipient.getLastName().substring(0, 1));
         holder.name.setText(recipient.getFirstName()+" "+recipient.getLastName());
-//        holder.menuDropDown
         holder.countryFlag.setBackgroundResource(CountryHelper.getCountryImageFromStr(recipient.getCountry()));
         holder.bank.setText(recipient.getBank());
-        holder.send.setOnClickListener(new CustomClickListener(recipient));
+        holder.itemView.setOnClickListener(new CustomClickListener(recipient));
+
+
     }
 
     @Override

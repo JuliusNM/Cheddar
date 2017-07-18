@@ -8,9 +8,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -56,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), ActivityProfile.class);
+                Intent intent= new Intent(getApplicationContext(), SendMoneyActivity.class);
                 startActivity(intent);
             }
         });
@@ -97,5 +100,23 @@ public class HomeActivity extends AppCompatActivity {
     {
         tablayout.getTabAt(0).setIcon(tabIcons[0]);
         tablayout.getTabAt(1).setIcon(tabIcons[1]);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_settings:
+                if (item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+                Intent settings = new Intent(this, ActivityProfile.class);
+                startActivity(settings);
+
+        }
+        return true;
     }
 }

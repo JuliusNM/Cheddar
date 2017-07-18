@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,7 +28,7 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_from_recipient);
 
-        TextView name = (TextView)findViewById(R.id.bank_name);
+        TextView name = (TextView)findViewById(R.id.name);
         TextView bankName = (TextView)findViewById(R.id.bank_name);
         TextView accountNumber = (TextView)findViewById(R.id.bank_account);
         TextView country = (TextView)findViewById(R.id.country);
@@ -55,4 +57,22 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
             }
         });
     }
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_settings:
+                if (item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+                Intent settings = new Intent(this, ActivityProfile.class);
+                startActivity(settings);
+
+        }
+        return true;
+    }
+
 }

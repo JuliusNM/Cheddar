@@ -38,4 +38,7 @@ public class Bank implements Serializable, AccountInterface {
         this.accountNumber = accountNumber;
 
     }
+    public  String toString(){
+        return this.getBank()+" "+this.getAccountNumber();
+    }
 }

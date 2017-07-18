@@ -8,64 +8,13 @@
     android:layout_marginRight="10dp"
     tools:context="com.example.dell.cheddar.SendMoneyActivity">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/send_money"-->
-        <!--android:textSize="20sp"-->
-        <!--android:layout_marginTop="16dp"-->
-        <!--android:id="@+id/textView4"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignLeft="@+id/textView"-->
-        <!--android:layout_alignStart="@+id/textView" />-->
-
-
-
-    <!--<RadioGroup-->
-        <!--android:id="@+id/radioSendTo"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/textView4"-->
-        <!--android:layout_alignLeft="@+id/send_from"-->
-        <!--android:layout_alignStart="@+id/send_from"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_marginLeft="10dp">-->
-
-
-            <!--<RadioButton-->
-                <!--android:id="@+id/radioBank"-->
-                <!--android:tag="Enter Bank Number"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@string/radio_bank"-->
-                <!--android:textSize="18sp"-->
-                <!--android:checked="true"-->
-                <!--android:layout_weight="1"-->
-
-                <!--/>-->
-            <!--<RadioButton-->
-                <!--android:id="@+id/radioMobileWallet"-->
-                <!--android:tag="Enter Phone Number"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@string/radio_mobile_wallet"-->
-                <!--android:textSize="18sp"-->
-                <!--android:layout_marginLeft="50dp"-->
-                <!--android:layout_weight="1"-->
-
-                <!--/>-->
-
-
-    <!--</RadioGroup>-->
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/select_country_layout"
         android:layout_height="40dp"
         android:background="@drawable/rounded"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="60dp">
 
         <TextView
             android:id="@+id/textView"
@@ -149,33 +98,33 @@
         android:layout_alignRight="@+id/textView"
         android:layout_alignEnd="@+id/textView"
         android:layout_marginTop="17dp" />
-    <RadioGroup
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/radioGroup"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:layout_below="@+id/send_from"
-        android:layout_alignLeft="@+id/radioSendTo"
-        android:layout_alignStart="@+id/radioSendTo">
-
-
-        <RadioButton
-            android:id="@+id/radioButton2"
+        android:layout_below="@+id/send_from">
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="CentralBank"
-            android:textSize="18sp" />
+            android:id="@+id/radio_group_accounts"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/send_from">
+        </RadioGroup>
 
-        <RadioButton
-            android:id="@+id/radioButton"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bank of Baroda"
-            android:layout_marginLeft="50dp"
-            android:textSize="18sp" />
-    </RadioGroup>
+            android:id="@+id/radio_group_accounts_bank"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/send_from">
+
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
 
 
     <LinearLayout

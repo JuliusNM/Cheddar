@@ -19,4 +19,6 @@
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
     <string name="you_are_about_to_send_money_to">You are about to send money to:</string>
+    <string name="feedback">Feedback</string>
+    <string name="help">Help</string>
 </resources>

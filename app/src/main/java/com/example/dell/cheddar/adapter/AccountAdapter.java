@@ -90,7 +90,7 @@ public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
                 break;
             case AccountAdapter.TYPE_CARD:
-            default: //TODO: This will likely crash in onBindViewHolder
+            default:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_list_item, parent, false);
 
                 holder = new CardHolder(view);
@@ -141,14 +141,11 @@ public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemCount() {
-        Log.d("Contains ITEMS", accounts.size() + " items");
 
         return accounts.size();
     }
 
     public void addItems(ArrayList<AccountInterface> items){
         this.accounts.addAll(items);
-        Log.d("ADDING ITEMS", accounts.size() + " items");
-        notifyDataSetChanged();
     }
 }
