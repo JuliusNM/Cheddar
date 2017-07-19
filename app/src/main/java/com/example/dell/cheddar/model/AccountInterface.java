@@ -5,4 +5,5 @@ package com.example.dell.cheddar.model;
  */
 
 public interface AccountInterface {
+
 }

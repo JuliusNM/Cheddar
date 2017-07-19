@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     tools:context="com.example.dell.cheddar.ActivitySendFromRecipient"
     android:orientation="vertical">
 
@@ -11,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/you_are_about_to_send_money_to"
-        android:layout_marginLeft="20dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="15dp"/>
@@ -29,7 +30,7 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Julius  Ngigi"
+            tools:text="Julius  Ngigi"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="89dp"
             android:textStyle="bold"/>
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="20dp"
-            android:text="Jamii Bora"
+            tools:text="Jamii Bora"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -73,7 +74,7 @@
             android:id="@+id/bank_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="24562555545655"
+            tools:text="24562555545655"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="26dp"
             android:textStyle="bold"/>
@@ -93,54 +94,106 @@
             android:id="@+id/country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nigeria"
+            tools:text="Nigeria"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="80dp"
             android:textStyle="bold"/>
 
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select bank to deduct money from:"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"/>
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Access Bank"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Bank Of Baroda"/>
-    </RadioGroup>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="40dp">
-        <Button
-            android:id="@+id/next_button"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:id="@+id/send_from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/blue_rounded"/>
+            android:text="Send money from:"
+            android:textStyle="bold"
+
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:layout_weight="3"
+            android:layout_alignRight="@+id/textView"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_marginTop="17dp" />
+        <info.hoang8f.android.segmented.SegmentedGroup
+            xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/segmented_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_weight="1"
+            android:layout_below="@+id/send_from"
+            android:orientation="horizontal"
+            segmentedgroup:sc_border_width="1dp"
+            segmentedgroup:sc_corner_radius="20dp">
+
+            <RadioButton
+                android:id="@+id/button_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bank"
+                style="@style/RadioButton" />
+
+            <RadioButton
+                android:id="@+id/button_card"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Card" />
+        </info.hoang8f.android.segmented.SegmentedGroup>
 
     </LinearLayout>
 
 
+<LinearLayout
+android:layout_width="match_parent"
+android:id="@+id/radio_holder"
+android:layout_height="wrap_content"
+android:layout_below="@+id/send_from_layout">
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/radio_group_accounts"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:layout_below="@+id/send_from">
+</RadioGroup>
+
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/radio_group_accounts_bank"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:layout_below="@+id/send_from">
 
 
+</RadioGroup>
+
+
+</LinearLayout>
+<LinearLayout
+android:id="@+id/LinearLayout1"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center|bottom"
+android:layout_below="@+id/radio_holder"
+android:orientation="horizontal" >
+
+<Button
+    android:id="@+id/next"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:text="Next"
+    android:layout_marginBottom="10dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:textColor="#FFFFFF"
+    android:background="@drawable/pink_rounded"/>
+</LinearLayout>
 </LinearLayout>
 
 
