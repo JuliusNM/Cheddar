@@ -38,7 +38,7 @@ public class Card implements Serializable, AccountInterface {
 
 
     }
-    public  String toString(){
+    public String toString(){
         return this.getCardIssuer()+"\n"+"Card Number:"+this.getCardNumber();
     }
 

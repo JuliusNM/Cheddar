@@ -159,6 +159,7 @@ android:layout_below="@+id/send_from_layout">
     android:layout_marginTop="10dp"
     android:orientation="vertical"
     android:layout_below="@+id/send_from">
+
 </RadioGroup>
 
 <RadioGroup
