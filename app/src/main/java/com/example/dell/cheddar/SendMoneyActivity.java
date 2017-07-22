@@ -46,8 +46,8 @@ public class SendMoneyActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_money);
 
-        final RadioGroup bankRadioGroup = (RadioGroup) findViewById(R.id.radio_group_accounts);
-        final RadioGroup cardRadioGroup = (RadioGroup) findViewById(R.id.radio_group_accounts_bank);
+        final RadioGroup bankRadioGroup = (RadioGroup) findViewById(R.id.card_group_accounts);
+        final RadioGroup cardRadioGroup = (RadioGroup) findViewById(R.id.bank_group_accounts);
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
         final Call<ArrayList<Card>> cardCall = apiInterface.getCards();
@@ -87,16 +87,16 @@ public class SendMoneyActivity extends AppCompatActivity  {
 
                 LayoutInflater li = getLayoutInflater();
 
-                RadioGroup rgp = (RadioGroup) findViewById(R.id.radio_group_accounts);
+                RadioGroup rgp = (RadioGroup) findViewById(R.id.card_group_accounts);
                 for (int i = 0; i < cards.size(); i++) {
                     Card card = cards.get(i);
 
-                    RadioButton tempButton = (RadioButton) li.inflate(R.layout.blank_button, null);
+                    RadioButton customButton = (RadioButton) li.inflate(R.layout.blank_button, null);
 
-                    tempButton.setText(card.toString());
-                    tempButton.setTag(i);
+                    customButton.setText(card.toString());
+                    customButton.setTag(i);
 
-                    rgp.addView(tempButton);
+                    rgp.addView(customButton);
                 }
             }
 
@@ -114,25 +114,25 @@ public class SendMoneyActivity extends AppCompatActivity  {
                 ArrayList<AccountInterface> accounts = new ArrayList<AccountInterface>();
                 accounts.addAll(banks);
 
+                LayoutInflater li = getLayoutInflater();
+                RadioGroup rgp = (RadioGroup) findViewById(R.id.bank_group_accounts);
 
+                for (int i = 0; i < banks.size(); i++) {
+                    Bank bank = banks.get(i);
 
-                for (int i = 0; i < accounts.size(); i++)
-                {
-                    RadioGroup rgp = (RadioGroup) findViewById(R.id.radio_group_accounts_bank);
-                    RadioButton radioButton = new RadioButton(getApplicationContext());
-                    String x = String.valueOf(accounts.get(i));
-                    radioButton.setText(x);
+                    RadioButton customButton = (RadioButton) li.inflate(R.layout.blank_button, null);
 
-                    radioButton.setId(i);
-                    RadioGroup.LayoutParams rprms = new RadioGroup.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT);
-                    rgp.addView(radioButton, rprms);
-                    radioButton.setTextColor(Color.parseColor("#757575"));
-                    radioButton.setTypeface(null, Typeface.BOLD);
+                    customButton.setText(bank.toString());
+                    customButton.setTag(i);
+
+                    rgp.addView(customButton);
                 }
+
 
             }
             @Override
             public void onFailure(Call<ArrayList<Bank>> accountCall, Throwable t) {
+                Log.d("Crashed", "here too");
 
             }
         });

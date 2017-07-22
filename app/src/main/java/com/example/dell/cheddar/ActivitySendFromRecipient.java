@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +14,6 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dell.cheddar.model.AccountInterface;
 import com.example.dell.cheddar.model.ApiClient;
@@ -22,7 +22,6 @@ import com.example.dell.cheddar.model.Bank;
 import com.example.dell.cheddar.model.Card;
 import com.example.dell.cheddar.model.Recipient;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import info.hoang8f.android.segmented.SegmentedGroup;
@@ -46,8 +45,8 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_from_recipient);
 
-        final RadioGroup bankRadioGroup = (RadioGroup) findViewById(R.id.radio_group_accounts);
-        final RadioGroup cardRadioGroup = (RadioGroup) findViewById(R.id.radio_group_accounts_bank);
+        final RadioGroup bankRadioGroup = (RadioGroup) findViewById(R.id.card_group_accounts);
+        final RadioGroup cardRadioGroup = (RadioGroup) findViewById(R.id.bank_group_accounts);
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
         final Call<ArrayList<Card>> cardCall = apiInterface.getCards();
@@ -83,19 +82,18 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
                 ArrayList<AccountInterface> accounts = new ArrayList<AccountInterface>();
                 accounts.addAll(cards);
 
-                for (int i = 0; i < accounts.size(); i++)
-                {
-                    RadioGroup rgp = (RadioGroup) findViewById(R.id.radio_group_accounts);
-                    RadioButton radioButton = new RadioButton(getApplicationContext());
-                    String x = String.valueOf(accounts.get(i));
-                    radioButton.setText(x);
-                    radioButton.setId(i);
-                    RadioGroup.LayoutParams rprms = new RadioGroup.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT);
-                    rgp.addView(radioButton, rprms);
-                    radioButton.setTextColor(Color.parseColor("#757575"));
-                    radioButton.setTypeface(null, Typeface.BOLD);
+                LayoutInflater li = getLayoutInflater();
 
+                RadioGroup rgp = (RadioGroup) findViewById(R.id.card_group_accounts);
+                for (int i = 0; i < cards.size(); i++) {
+                    Card card = cards.get(i);
 
+                    RadioButton customButton = (RadioButton) li.inflate(R.layout.blank_button, null);
+
+                    customButton.setText(card.toString());
+                    customButton.setTag(i);
+
+                    rgp.addView(customButton);
                 }
             }
 
@@ -114,22 +112,19 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
                 ArrayList<AccountInterface> accounts = new ArrayList<AccountInterface>();
                 accounts.addAll(banks);
 
+                LayoutInflater li = getLayoutInflater();
+                RadioGroup rgp = (RadioGroup) findViewById(R.id.bank_group_accounts);
 
+                for (int i = 0; i < banks.size(); i++) {
+                    Bank bank = banks.get(i);
 
-                for (int i = 0; i < accounts.size(); i++)
-                {
-                    RadioGroup rgp = (RadioGroup) findViewById(R.id.radio_group_accounts_bank);
-                    RadioButton radioButton = new RadioButton(getApplicationContext());
-                    String x = String.valueOf(accounts.get(i));
-                    radioButton.setText(x);
-                    radioButton.setId(i);
-                    RadioGroup.LayoutParams rprms = new RadioGroup.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT);
-                    rgp.addView(radioButton, rprms);
-                    radioButton.setTextColor(Color.parseColor("#757575"));
-                    radioButton.setTypeface(null, Typeface.BOLD);
+                    RadioButton customButton = (RadioButton) li.inflate(R.layout.blank_button, null);
 
+                    customButton.setText(bank.toString());
+                    customButton.setTag(i);
+
+                    rgp.addView(customButton);
                 }
-
             }
             @Override
             public void onFailure(Call<ArrayList<Bank>> accountCall, Throwable t) {

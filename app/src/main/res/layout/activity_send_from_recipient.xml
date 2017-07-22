@@ -134,6 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bank"
+                android:checked="true"
                 style="@style/RadioButton" />
 
             <RadioButton
@@ -155,7 +156,8 @@ android:layout_below="@+id/send_from_layout">
 <RadioGroup
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/radio_group_accounts"
+    android:id="@+id/card_group_accounts"
+    android:visibility="gone"
     android:layout_marginTop="10dp"
     android:orientation="vertical"
     android:layout_below="@+id/send_from">
@@ -165,7 +167,7 @@ android:layout_below="@+id/send_from_layout">
 <RadioGroup
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/radio_group_accounts_bank"
+    android:id="@+id/bank_group_accounts"
     android:layout_marginTop="10dp"
     android:orientation="vertical"
     android:layout_below="@+id/send_from">
