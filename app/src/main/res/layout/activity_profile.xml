@@ -4,9 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activity_profile"
     android:orientation="vertical"
     tools:context="com.example.dell.cheddar.ActivityProfile"
     android:weightSum="1">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/button_margin" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,6 +58,23 @@
             android:gravity="center"/>
 
     </LinearLayout>
+    <Button
+        android:id="@+id/btn_change_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card"
+        android:layout_marginTop="@dimen/button_margin"
+        android:paddingLeft="@dimen/button_padding"
+        android:text="Change Password" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_change_password"
+        android:layout_marginTop="@dimen/button_margin"
+        android:paddingLeft="@dimen/button_padding"
+        android:text="Logout" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/accounts_recycle_view"

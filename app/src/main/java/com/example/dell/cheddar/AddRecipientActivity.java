@@ -73,6 +73,9 @@ public class AddRecipientActivity extends AppCompatActivity {
                     public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                         responseData = response.body();
 
+                        Intent intent = new Intent (getApplication(),HomeActivity.class);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -85,13 +88,15 @@ public class AddRecipientActivity extends AppCompatActivity {
 
 
             }
+
         });
 
         btncancel = (Button)findViewById(R.id.btn_cancel);
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(intent);
             }
         });
 

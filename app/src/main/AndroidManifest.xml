@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <activity android:name=".SendMoneyActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Test"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,8 @@
         <activity android:name=".ConvertActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ActivitySendFromRecipient" />
-        <activity android:name=".ActivityProfile"></activity>
+        <activity android:name=".ActivityProfile" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>

@@ -158,7 +158,7 @@
         android:layout_below="@+id/layout_country">
 
         <Button
-            android:id="@+id/btn_save_recipient"
+            android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
@@ -167,7 +167,7 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/pink_rounded"/>
         <Button
-            android:id="@+id/btn_cancel"
+            android:id="@+id/btn_save_recipient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
