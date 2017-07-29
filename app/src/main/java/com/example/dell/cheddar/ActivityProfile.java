@@ -133,6 +133,8 @@ public class ActivityProfile extends AppCompatActivity implements ResetPasswordD
         mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
         mBtLogout = (Button) findViewById(R.id.btn_logout);
 
+        email.setText(mEmail);
+
     }
 
     private void initSharedPreferences() {

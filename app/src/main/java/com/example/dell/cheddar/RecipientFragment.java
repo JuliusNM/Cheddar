@@ -74,16 +74,6 @@ public class RecipientFragment extends Fragment {
             }
         });
 
-
-//        ArrayList<Recipient> recipients = new ArrayList<>(Arrays.asList(
-//                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius),
-//                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Nigeria", "134567890", R.drawable.julius),
-//                new Recipient("Julius", "Ngigi", "Too poor 4 bank", "Ghana", "134567890", R.drawable.julius)
-//
-//        ));
-
-
-
         return layout;
 
     }

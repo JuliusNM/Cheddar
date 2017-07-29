@@ -28,7 +28,6 @@ public class CountrySpinnerAdapter extends ArrayAdapter<CountryData> {
         super(context,id,countries);
         this.countries=countries;
         inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //this.groupid=groupid;
     }
 
     public View getView(int position, View convertView, ViewGroup parent ){
