@@ -14,6 +14,37 @@ public class Card implements Serializable, AccountInterface {
     private String cardNumber;
     @SerializedName("CardIssuer")
     private String cardIssuer;
+    @SerializedName("CVV")
+    private String cvv;
+    @SerializedName("ExpiryYear")
+    private String expiryYear;
+    @SerializedName("ExpiryMonth")
+    private String expiryMonth;
+
+    public String getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
+    }
+
+    public String getExpiryYear() {
+        return expiryYear;
+    }
+
+    public void setExpiryYear(String expiryYear) {
+        this.expiryYear = expiryYear;
+    }
+
+    public String getExpiryMonth() {
+        return expiryMonth;
+    }
+
+    public void setExpiryMonth(String expiryMonth) {
+        this.expiryMonth = expiryMonth;
+    }
+
 
     public String getCardIssuer() {
         return cardIssuer;
@@ -31,11 +62,13 @@ public class Card implements Serializable, AccountInterface {
         this.cardNumber = cardNumber;
     }
 
-    public Card(String cardIssuer, String cardNumber){
+    public Card(String cardIssuer, String cardNumber, String cvv, String expiryMonth, String expiryYear){
 
         this.cardIssuer = cardIssuer;
         this.cardNumber = cardNumber;
-
+        this.cvv = cvv;
+        this.expiryMonth = expiryMonth;
+        this.expiryYear = expiryYear;
 
     }
     public String toString(){

@@ -67,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GH"
+                android:text="GHS"
                 android:tag="send_currency"
                 android:textColor="#3f6ee0"
                 android:textSize="10sp"
@@ -202,14 +202,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ghana"
+                android:src="@drawable/nigeria"
                 android:layout_gravity="center_vertical"
                 android:gravity="left"
                 android:layout_marginRight="15dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GH"
+                android:text="NGN"
                 android:textColor="#3f6ee0"
                 android:textSize="10sp"
                 android:layout_gravity="center_vertical"
@@ -250,7 +250,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#3f6ee0"
-            android:text="NG"
+            android:text="GHS"
             android:textStyle="bold"
             android:layout_weight="2.03"
             android:layout_gravity="center_vertical"/>

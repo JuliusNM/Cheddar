@@ -42,17 +42,20 @@ public class ConvertActivity extends AppCompatActivity {
         amountToSend.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int before, int count) {
-                Log.d("Tag1", "beforeTextChanged: ");
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
 
-                    int amountToSend = s.length() > 0 ? Integer.parseInt(s.toString()) : 0;
-                    int conversionRate = Integer.parseInt(exchangeRate.getText().toString());
+                    double amountToSend = s.length() > 0 ? Double.parseDouble(s.toString()) : 0;
+                    double conversionRate = Double.parseDouble(exchangeRate.getText().toString());
+                    double cheddarRate = Double.parseDouble(cheddarCharges.getText().toString())/100 * amountToSend;
 
-                    amountToReceive.setText(NumberFormat.getNumberInstance(Locale.getDefault()).format(amountToSend * conversionRate));
+                    String finalAmount = NumberFormat.getNumberInstance(Locale.getDefault()).format((amountToSend * conversionRate)- (cheddarRate));
+
+                    amountToReceive.setText(finalAmount);
+                    total.setText(NumberFormat.getNumberInstance(Locale.getDefault()).format((amountToSend + cheddarRate)));
                 }
                 catch(NumberFormatException nfe) {
                     System.out.println("Could not parse " + nfe);
