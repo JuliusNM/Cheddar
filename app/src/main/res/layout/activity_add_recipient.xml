@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.dell.cheddar.AddRecipientActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="100dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add New Recipient"
-            android:gravity="center"
-            android:layout_gravity=""
-            android:textSize="20sp"
-            android:layout_marginTop="0dp"/>
-    </LinearLayout>
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +15,7 @@
         android:id="@+id/layout_account_number"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="80dp">
         <ImageView
 
             android:layout_width="20dp"
@@ -39,6 +24,7 @@
             android:tint="@color/colorPrimary"
             android:layout_gravity="center_vertical|left"
             android:layout_weight="1"/>
+
         <EditText
             android:id="@+id/add_recipient_account_number"
             android:layout_width="wrap_content"
@@ -148,6 +134,37 @@
             android:layout_weight="3"
             android:inputType="number"/>
     </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:weightSum="4"-->
+        <!--android:layout_below="@+id/layout_country"-->
+        <!--android:background="@drawable/rounded"-->
+        <!--android:id="@+id/rec_phone"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginTop="15dp">-->
+        <!--<ImageView-->
+
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:src="@drawable/ic_credit_card_white_18dp"-->
+            <!--android:tint="@color/colorPrimary"-->
+            <!--android:layout_gravity="center_vertical|left"-->
+            <!--android:layout_weight="1"/>-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/add_recipient_phone_number"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Phone Number"-->
+            <!--android:textSize="16dp"-->
+            <!--android:background="@drawable/right_border"-->
+            <!--android:layout_gravity="center_vertical|right"-->
+            <!--android:layout_weight="3"-->
+            <!--android:inputType="number"/>-->
+    <!--</LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"

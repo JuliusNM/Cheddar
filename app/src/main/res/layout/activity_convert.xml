@@ -42,7 +42,6 @@
                     android:textSize="20sp"
                     android:textColor="#24df48"
                     android:inputType="number" />
-
             </android.support.design.widget.TextInputLayout>
 
 
@@ -269,6 +268,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/btn_send"
             android:text="Send Money"
             android:textColor="#FFFFFF"
             android:background="@drawable/blue_rounded"

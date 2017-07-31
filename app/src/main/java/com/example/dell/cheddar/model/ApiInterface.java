@@ -27,6 +27,9 @@ public interface ApiInterface {
     @GET("cards")
     Call<ArrayList<Card>> getCards();
 
+    @POST("cards")
+    Call<ResponseData> postCard(@Body Card body);
+
     @GET("accounts")
     Call<ArrayList<Bank>> getBankAccounts();
 

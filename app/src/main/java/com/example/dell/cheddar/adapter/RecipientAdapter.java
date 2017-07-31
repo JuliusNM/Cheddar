@@ -1,6 +1,5 @@
 package com.example.dell.cheddar.adapter;
 
-import android.support.v7.widget.MenuPopupWindow;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +13,6 @@ import com.example.dell.cheddar.model.Recipient;
 import com.example.dell.cheddar.util.CountryHelper;
 
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Dell on 7/10/2017.
@@ -62,12 +59,11 @@ public class RecipientAdapter extends RecyclerView.Adapter<RecipientAdapter.Reci
     public  void onBindViewHolder(RecipientHolder holder, int position) {
         Recipient recipient = recipients.get(position);
 
-        holder.recipient_picture.setText(recipient.getFirstName().substring(0, 1)+" "+recipient.getLastName().substring(0, 1));
+        //holder.recipient_picture.setText(recipient.getFirstName().substring(0, 1)+" "+recipient.getLastName().substring(0, 1));
         holder.name.setText(recipient.getFirstName()+" "+recipient.getLastName());
         holder.countryFlag.setBackgroundResource(CountryHelper.getCountryImageFromStr(recipient.getCountry()));
         holder.bank.setText(recipient.getBank());
         holder.itemView.setOnClickListener(new CustomClickListener(recipient));
-
 
     }
 

@@ -31,6 +31,7 @@ public class AddRecipientActivity extends AppCompatActivity {
     EditText lastName;
     Spinner bank;
     Spinner country;
+  //  EditText phoneNumber;
     Button btnsaveRecipient;
     Button btncancel;
     private ApiInterface apiInterface;
@@ -46,12 +47,10 @@ public class AddRecipientActivity extends AppCompatActivity {
         lastName = (EditText)findViewById(R.id.add_recipient_last_name);
         bank = (Spinner)findViewById(R.id.bank_spinner);
         country = (Spinner)findViewById(R.id.country_spinner);
+     //   phoneNumber = (EditText)findViewById(R.id.add_recipient_phone_number);
 
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-
-
-
         btnsaveRecipient = (Button)findViewById(R.id.btn_save_recipient);
         btnsaveRecipient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +62,8 @@ public class AddRecipientActivity extends AppCompatActivity {
                         lastName.getText().toString(),
                         bank.getSelectedItem().toString(),
                         country.getSelectedItem().toString(),
-                        accountNumber.getText().toString(),
-                        null
+                        accountNumber.getText().toString()
+//                      phoneNumber.getText().toString()
                 );
 
                 Call<ResponseData> call = apiInterface.postRecipient(recipient);
@@ -131,7 +130,6 @@ public class AddRecipientActivity extends AppCompatActivity {
                 else item.setChecked(true);
                 Intent settings = new Intent(this, ActivityProfile.class);
                 startActivity(settings);
-
         }
         return true;
     }

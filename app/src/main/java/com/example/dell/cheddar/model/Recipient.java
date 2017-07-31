@@ -9,37 +9,29 @@ import java.io.Serializable;
  */
 
 public class Recipient implements Serializable {
-    @SerializedName("RecipientFirstName")
-    private String firstName;
-    @SerializedName("RecipientLastName")
-    private String lastName;
-    @SerializedName("RecipientBank")
-    private String bank;
-    @SerializedName("Country")
-    private String country;
-    @SerializedName("RecipientAccountNumber")
-    private String accountNumber;
-    private Integer profile;
 
-    public Recipient(String firstName, String lastName, String bank, String country, String accountNumber, Integer profile) {
+    private String firstName;
+    private String lastName;
+    private String bank;
+    private String country;
+    private String accountNumber;
+  //  private String phoneNumber;
+
+
+
+    public Recipient(String firstName, String lastName, String bank, String country, String accountNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bank = bank;
         this.country = country;
         this.accountNumber = accountNumber;
-        this.profile = profile;
+      //  this.phoneNumber = phoneNumber;
+
+
     }
 
     public String getName(){
         return firstName+" "+lastName;
-    }
-
-    public Integer getProfile() {
-        return profile;
-    }
-
-    public void setProfile(Integer profile) {
-        this.profile = profile;
     }
 
     public String getFirstName() {
@@ -81,4 +73,7 @@ public class Recipient implements Serializable {
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
+//    public String getPhoneNumber() {return phoneNumber;}
+//
+//    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
 }

@@ -1,16 +1,23 @@
 package com.example.dell.cheddar;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -24,6 +31,7 @@ public class ConvertActivity extends AppCompatActivity {
     private EditText amountToSend;
     private TextView amountToReceive;
     private TextView total;
+    private String finalAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,7 @@ public class ConvertActivity extends AppCompatActivity {
         exchangeRate = (TextView) findViewById(R.id.ex_rate_value);
         cheddarCharges = (TextView) findViewById(R.id.cheddar_charges);
         amountToReceive = (TextView) findViewById(R.id.amount_receive);
+        btnsend = (Button) findViewById(R.id.btn_send);
         total = (TextView) findViewById(R.id.total);
 
         exchangeRate.setText("70");
@@ -68,6 +77,34 @@ public class ConvertActivity extends AppCompatActivity {
             }
 
         });
+         btnsend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(view.getContext());
+                alertDialogBuilder.setMessage("Are you sure you wanted to make decision");
+                alertDialogBuilder.setPositiveButton("yes",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                        SmsManager smsManager = SmsManager.getDefault();
+                        smsManager.sendTextMessage("+233265231476", null, "You have received NGN" +finalAmount+"From Julius Mburu, please check with your bank for more information", null, null);
+                        Toast.makeText(ConvertActivity.this,"Transaction successful! ",Toast.LENGTH_LONG).show();
+                    }
+                });
+                alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+            }
+         });
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);

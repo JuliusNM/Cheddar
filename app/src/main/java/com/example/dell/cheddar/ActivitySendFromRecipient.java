@@ -36,6 +36,7 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
     String bank;
     String account;
     String countryName;
+  //  String phoneNumber;
     private ApiInterface apiInterface;
     private RadioButton btnbank;
     private RadioButton btncard;
@@ -136,6 +137,7 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
         TextView bankName = (TextView)findViewById(R.id.bank_name);
         TextView accountNumber = (TextView)findViewById(R.id.bank_account);
         TextView country = (TextView)findViewById(R.id.country);
+      //  TextView phone = (TextView)findViewById(R.id.phone_number);
 
 
         Bundle extras = getIntent().getExtras();
@@ -147,11 +149,14 @@ public class ActivitySendFromRecipient extends AppCompatActivity {
         bank = recipient.getBank();
         account = recipient.getAccountNumber();
         countryName = recipient.getCountry();
+      //  phoneNumber = recipient.getPhoneNumber();
+
 
         name.setText(firstName+" "+lastName);
         bankName.setText(bank);
         accountNumber.setText(account);
         country.setText(countryName);
+      //  phone.setText(phoneNumber);
 
         next = (Button)findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
