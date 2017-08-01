@@ -53,7 +53,7 @@ public class AddCard extends AppCompatActivity {
             public void onClick(View view) {
                 Card card = new Card(
                         cardIssuer.getText().toString(),
-                        cardIssuer.getText().toString(),
+                        cardNumber.getText().toString(),
                         expiryMonth.getText().toString(),
                         expiryYear.getText().toString(),
                         cvv.getText().toString()
@@ -88,7 +88,7 @@ public class AddCard extends AppCompatActivity {
             public void onClick(View view) {
                 Card card = new Card(
                         cardIssuer.getText().toString(),
-                        cardIssuer.getText().toString(),
+                        cardNumber.getText().toString(),
                         expiryMonth.getText().toString(),
                         expiryYear.getText().toString(),
                         cvv.getText().toString()

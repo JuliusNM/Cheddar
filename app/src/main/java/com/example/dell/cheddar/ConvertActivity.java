@@ -33,6 +33,7 @@ public class ConvertActivity extends AppCompatActivity {
     private TextView total;
     private String finalAmount;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,14 +84,17 @@ public class ConvertActivity extends AppCompatActivity {
 
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(view.getContext());
-                alertDialogBuilder.setMessage("Are you sure you wanted to make decision");
+                alertDialogBuilder.setMessage("Are you sure you want to complete this transaction?");
                 alertDialogBuilder.setPositiveButton("yes",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
 
                         SmsManager smsManager = SmsManager.getDefault();
-                        smsManager.sendTextMessage("+233265231476", null, "You have received NGN" +finalAmount+"From Julius Mburu, please check with your bank for more information", null, null);
+                        smsManager.sendTextMessage("0507230810", null, "You have received NGN 6990 From Julius Mburu, please check with your bank for more information", null, null);
                         Toast.makeText(ConvertActivity.this,"Transaction successful! ",Toast.LENGTH_LONG).show();
+
+                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                        startActivity(intent);
                     }
                 });
                 alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {

@@ -80,14 +80,9 @@ public class AddRecipientActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<ResponseData> call, Throwable t) {
 
-                        Log.d("We failed","");
-
                     }
                 });
-
-
             }
-
         });
 
         btncancel = (Button)findViewById(R.id.btn_cancel);
@@ -133,7 +128,6 @@ public class AddRecipientActivity extends AppCompatActivity {
         }
         return true;
     }
-
 
 
 }
